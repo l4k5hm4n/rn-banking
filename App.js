@@ -1,21 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View , ScrollView} from 'react-native';
+import ScannerSection from './components/Home/ScannerSection'
+import MainContainer from './components/Home/MainContainer'
+import FetchBillersBanner from './components/Home/FetchBillersBanner'
+import MainPayments from './components/Home/MainPayments'
+import Slider from './components/Slider'
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={styles.MainContainer}>
+    <ScrollView contentContainerStyle={styles.container}
+      onScroll={(event) => {console.log(event.nativeEvent)}}
+    >
       <StatusBar style="auto" />
+      <ScannerSection />
+      <MainContainer>
+        <FetchBillersBanner />
+        <MainPayments />
+        <Slider />
+      </MainContainer>
+    </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  MainContainer: {
     flex: 1,
+    marginTop: 36,
+  },
+  container: {
+    flexGrow: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

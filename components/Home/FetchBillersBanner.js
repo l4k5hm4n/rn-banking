@@ -15,7 +15,7 @@ const FetchBillersBanner = props => {
                 </Suspense>  
 
                 <View style={styles.TextContainer}>
-                    <Text>Fetch all your utility billers linked to your mobile number</Text>
+                    <Text style={styles.TextContent}>Fetch all your utility billers linked to your mobile number</Text>
                     <View style={styles.BtnContainer}>
                         <Text style={styles.TextButton}>Fetch Billers</Text>
                         <Suspense fallback={<Text>...</Text>}>
@@ -48,16 +48,20 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
         marginLeft: 12,
-        fontSize: 13,
+    },
+    TextContent: {
+        fontSize: Colors.textPrimary,
+        marginTop: 2,
     },
     BtnContainer: {
         flexDirection: 'row',
         alignItems: 'center',
     },
     TextButton: {
-        fontWeight: 'bold',
+        fontWeight: '500',
         color: Colors.primary,
-        marginTop: 6
+        marginTop: 6,
+        fontSize: Colors.textPrimary
     },
     ArrowImage: {
         marginTop: 7.2

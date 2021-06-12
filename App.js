@@ -5,6 +5,8 @@ import ScannerSection from './components/Home/ScannerSection'
 import MainContainer from './components/Home/MainContainer'
 import FetchBillersBanner from './components/Home/FetchBillersBanner'
 import MainPayments from './components/Home/MainPayments'
+import SendAgain from './components/Home/SendAgain'
+import MyBills from './components/Home/MyBills'
 import Slider from './components/Slider'
 
 export default function App() {
@@ -12,7 +14,7 @@ export default function App() {
   return (
     <View style={styles.MainContainer}>
     <ScrollView contentContainerStyle={styles.container}
-      onScroll={(event) => {console.log(event.nativeEvent)}}
+      // onScroll={(event) => {console.log(event.nativeEvent)}}
     >
       <StatusBar style="auto" />
       <ScannerSection />
@@ -20,6 +22,8 @@ export default function App() {
         <FetchBillersBanner />
         <MainPayments />
         <Slider />
+        <SendAgain />
+        <MyBills />
       </MainContainer>
     </ScrollView>
     </View>

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import {Animated, View, Text, Image, StyleSheet, TouchableOpacity, FlatList, Dimensions} from 'react-native';
-import Colors from '../constants/colors'
 
 const { width: windowWidth, height: windowHeight } = Dimensions.get("window");
 
@@ -11,7 +10,7 @@ let data = [
         'https://images.unsplash.com/photo-1567226475328-9d6baaf565cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
       title: 'Flat ₹30 cashback',
       subtitle: 'on your first recharge',
-      backgroundColor: 'green'
+      backgroundColor: '#CA476A'
     },
     {
       id: 2,
@@ -19,7 +18,7 @@ let data = [
         'https://images.unsplash.com/photo-1455620611406-966ca6889d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1130&q=80',
         title: 'Flat ₹100 cashback',
         subtitle: 'on your first bill payment',
-        backgroundColor: 'blue'
+        backgroundColor: '#586AD5'
     },
     {
       id: 3,
@@ -27,7 +26,7 @@ let data = [
         'https://images.unsplash.com/photo-1477587458883-47145ed94245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
         title: 'Flat ₹50 cashback',
         subtitle: 'on your first wifi bill payment',
-        backgroundColor: 'purple'
+        backgroundColor: '#AA67F1'
     },
     {
       id: 4,
@@ -35,7 +34,7 @@ let data = [
         'https://images.unsplash.com/photo-1568700942090-19dc36fab0c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
         title: 'Flat ₹30 cashback',
         subtitle: 'on your first wallet transfer',
-        backgroundColor: 'red'
+        backgroundColor: 'purple'
     }
   ]
 
@@ -99,8 +98,10 @@ const onScroll = useCallback((event) => {
 let SlideNavigation = (props) => {
   let nav = []
   for( let i=0; i<props.slideCount; i++){
-    nav = [...nav, <Animated.View 
-    style={ i == index ? {...styles.NavDot2, transform: [{ translateX: navBtnAnim } ]} : {...styles.NavDot}}></Animated.View>]
+    nav = [...nav, 
+    <Animated.View key={i}
+    style={ i == index ? {...styles.NavDot2, transform: [{ translateX: navBtnAnim } ]} : {...styles.NavDot}}>
+    </Animated.View>]
 }
 
   return(

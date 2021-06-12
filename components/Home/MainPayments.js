@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         paddingVertical: 12,
         borderRadius: 20,
-        justifyContent: 'space-between',
+        justifyContent: 'space-between'
     },
     IconContainer: {
         marginRight: '6%',
@@ -73,7 +73,8 @@ const styles = StyleSheet.create({
     },
     Text: {
         color: Colors.black_var1,
-        paddingTop: 8
+        paddingTop: 8,
+        fontSize: Colors.textPrimary
     }
 
 })

@@ -7,6 +7,9 @@ import FetchBillersBanner from './components/Home/FetchBillersBanner'
 import MainPayments from './components/Home/MainPayments'
 import SendAgain from './components/Home/SendAgain'
 import MyBills from './components/Home/MyBills'
+import CashbackBanner from './components/Home/CashbackBanner'
+import BillsGrid from './components/Home/BillsGrid'
+import InviteReferral from './components/Home/InviteReferral'
 import Slider from './components/Slider'
 
 export default function App() {
@@ -24,6 +27,9 @@ export default function App() {
         <Slider />
         <SendAgain />
         <MyBills />
+        <CashbackBanner />
+        <BillsGrid />
+        <InviteReferral />
       </MainContainer>
     </ScrollView>
     </View>
@@ -40,3 +46,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+
+// https://formidable.com/blog/2021/reanimated-two/
+// https://www.reactnativeschool.com/how-to-use-reanimated-2-a-beginners-guide
+// https://thewidlarzgroup.com/reanimated2-slider/#animate-slider2-with-useslider-hook

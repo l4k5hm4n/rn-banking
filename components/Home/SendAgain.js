@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
         width: 'auto',
         height: 'auto',
         marginHorizontal: 24,
+        marginBottom: 16,
         paddingVertical: 12,
         borderRadius: 20,
         justifyContent: 'space-between',

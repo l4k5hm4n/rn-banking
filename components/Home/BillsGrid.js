@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity, Platform} from 'react-native';
 import Colors from '../../constants/colors'
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -18,58 +18,68 @@ const SendAgain = props => {
         {
             "name" : "Electricity",
             "icon" : <ElectricityIcon />,
-            "colors" : ['#AA67F1', '#5C61D8'],
-            "locations" : [0,1],
-            "start" : {x: 1, y: -0.4}
+            "colors" : ['#5C61D8', '#AA67F1'],
+            // "locations" : [0,1],
+            // "start" : {x: 1, y: -0.4},
+            "locations" : [0,0.9], 
+            "start" : {x: 0, y: 1 },
+            "end" : {x: 1, y: 0}
         },
         {
             "name" : "Postpaid",
             "icon" : <PostpaidIcon />,
             "colors" : ['#5C61D8', '#AA67F1'],
             "locations": [0,1],
-            "start": {x: -0.6, y: -0.8}
+            "start": {x: -0.4, y: -1},
+            "end" : {x: 1, y: 0}
         },
         {
             "name" : "Prepaid",
             "icon" : <PrepaidIcon />,
             "colors" : ['#5C61D8', '#AA67F1'],
             "locations": [0,1],
-            "start": {x: -0.4, y: -0.8}
+            "start": {x: -0.4, y: -1},
+            "end" : {x: 1, y: 0}
         },
         {
             "name" : "House rent",
             "icon" : <HouserentIcon />,
-            "colors" : ['#AA67F1', '#5C61D8'],
-            "locations" : [0.5,1],
-            "start" : {x: -1, y: -1}
+            "colors" : ['#5C61D8', '#AA67F1'],
+            "locations" : [0,0.9], 
+            "start" : {x: 1, y: 1.2 },
+            "end" : {x: 0, y: 0}
         },
         {
             "name" : "DTH",
             "icon" : <DthIcon />,
             "colors" : ['#5C61D8', '#AA67F1'],
-            "locations" : [1,0],
-            "start" : {x: 2, y: 0}
+            "locations" : [0,1],
+            "start" : {x: 0, y: 1},
+            "end" : {x: 1.4, y: -0.4},
         },
         {
             "name" : "Piped gas",
             "icon" : <PipedgasIcon />,
             "colors" : ['#5C61D8', '#AA67F1'],
-            "locations" : [1,0],
-            "start" : {x: 0.8, y: -0.8}
+            "locations" : [0,1],
+            "start" : {x: 0, y: 1},
+            "end" : {x: 1, y: -0.2},
         },
         {
             "name" : "FASTag",
             "icon" : <FastagIcon />,
             "colors" : ['#5C61D8', '#AA67F1'],
-            "locations" : [1,0],
-            "start" : {x: 0.8, y: -0.8}
+            "locations" : [0,1],
+            "start" : {x: 0, y: 1},
+            "end" : {x: 1, y: -0.2},
         },
         {
             "name" : "Gas cylinder",
             "icon" : <GascylinderIcon />,
             "colors" : ['#5C61D8', '#AA67F1'],
-            "locations" : [1,1],
-            "start" : {x: 0.0, y: 0}
+            "locations" : [0,1],
+            "start" : {x: 1, y: 1},
+            "end" : {x: 0, y: -0.6},
         },
         
     ]
@@ -92,6 +102,7 @@ const SendAgain = props => {
                         colors={bill.colors}
                         locations= {bill.locations}
                         start={bill.start}
+                        end= {bill.end}
                         >
                         {bill.icon}
                     </LinearGradient>
@@ -114,7 +125,7 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         paddingVertical: 12,
         borderRadius: 20,
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
     },
     ContainerHeading: {
         flexDirection: 'row',
@@ -134,7 +145,8 @@ const styles = StyleSheet.create({
     ContainerBody: {
         flexDirection: 'row',
         flexWrap:'wrap',
-        marginHorizontal: -12
+        marginHorizontal: -12,
+        justifyContent: 'space-around',
     },
     IconContainer: {
         alignItems: 'center',

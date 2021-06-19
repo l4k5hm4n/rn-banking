@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         paddingVertical: 12,
         borderRadius: 20,
-        justifyContent: 'space-between'
+        justifyContent: 'space-around'
     },
     IconContainer: {
         marginRight: '6%',

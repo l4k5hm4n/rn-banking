@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
     },
     SlideText: {
-        flex: 1,
+        flex: 2,
         justifyContent: 'flex-start',
         paddingHorizontal: 20,
         paddingVertical: 16,
@@ -154,14 +154,16 @@ const styles = StyleSheet.create({
     SlideTextTitle: {
         color: 'white',
         fontSize: 16,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        width: 200
     },
     SlideTextSubTitle: {
         color: 'white',
-        opacity: 0.8
+        opacity: 0.8, 
+        width: 225
     },
     SlideImage: { 
-        flex: 1,
+        flex: 2,
         width: '100%',
         height: '100%' 
     },

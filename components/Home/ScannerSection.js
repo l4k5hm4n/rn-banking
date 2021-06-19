@@ -8,6 +8,7 @@ const ScannerSection = props => {
             colors={['#C788FB', '#9269EB', '#435ECF']}
             locations= {[0,0.4,1]}
             start={{x: 0.5, y: 0}}
+            end={{x: 0.5, y: 1}}
             style={styles.bgHeader}
         >
         </LinearGradient>

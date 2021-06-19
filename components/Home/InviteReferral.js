@@ -7,11 +7,13 @@ import Colors from '../../constants/colors'
 // const RightArrow = import('../../assets/svg/right_arrow.js');
 
 const InviteReferral = props => {
+    console.warn(Platform.OS)
     return (
         <LinearGradient 
         colors={['white', '#E6EAFF']}
-        locations= {[0, 1]}
-        start={{x: 0, y: 0}}
+        locations= {[0, 0.8]}
+        start= {{x: 0.5, y: 0}}
+        end={{x: 0.5, y: 1}}
         >   
         <View style={styles.Container}>
                 <View style={styles.TextContainer}>
@@ -42,6 +44,7 @@ const styles = StyleSheet.create({
     TextContainer: {
         alignItems: 'flex-start',
         width: "60%",
+        paddingTop: 24
     },
     TextTitle: {
         fontSize: 24,     
@@ -59,22 +62,22 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 16,
         paddingVertical: 12,
-        marginVertical: 16
+        marginTop: 16,
+        marginBottom: 32
     },
     BtnText: {
         color: 'white'
     },
     ImageContainer: {
         width: '40%',
-        maxWidth: 200,
-        maxHeight: 200,
+        justifyContent: 'flex-end',
+        alignItems: 'stretch',
     },
     Image: {
-        width: "100%",
-        height: "100%",
+        width: 260,
+        height: 260,
         resizeMode: 'contain',
-        alignItems: 'center',
-        justifyContent: 'center',
+        marginLeft: -64
     }
 })
 

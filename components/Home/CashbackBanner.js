@@ -15,7 +15,7 @@ const CashbackBanner = props => {
                 </View>
 
                 <View style={styles.TextContainer}>
-                    <Text style={styles.TextTitle}>CASHBACK EARNED</Text>
+                    <Text style={styles.TextTitle}>CASHBACK EARNED ++</Text>
                     <Text style={styles.TextCashback}>₹7000</Text>
                 </View>
 

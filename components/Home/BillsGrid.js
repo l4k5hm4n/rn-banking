@@ -12,15 +12,13 @@ import PipedgasIcon from '../../assets/svg/pipedgas_icon.js';
 import FastagIcon from '../../assets/svg/fastag_icon.js';
 import GascylinderIcon from '../../assets/svg/gascylinder_icon.js';
 
-const SendAgain = props => {
+const BillsGrid = props => {
 
     let billsData = [
         {
             "name" : "Electricity",
             "icon" : <ElectricityIcon />,
             "colors" : ['#5C61D8', '#AA67F1'],
-            // "locations" : [0,1],
-            // "start" : {x: 1, y: -0.4},
             "locations" : [0,0.9], 
             "start" : {x: 0, y: 1 },
             "end" : {x: 1, y: 0}
@@ -95,9 +93,9 @@ const SendAgain = props => {
         </View>
 
         <View style={styles.ContainerBody}>
-        { billsData.map((bill) => {
+        { billsData.map((bill, index) => {
             return (
-                <TouchableOpacity style={styles.IconContainer} activeOpacity={0.8} onPress={props.onPress}>   
+                <TouchableOpacity key={index} style={styles.IconContainer} activeOpacity={0.8} onPress={props.onPress}>   
                     <LinearGradient style={styles.BillImage} 
                         colors={bill.colors}
                         locations= {bill.locations}
@@ -170,5 +168,5 @@ const styles = StyleSheet.create({
 
 })
 
-export default SendAgain;
+export default BillsGrid;
 

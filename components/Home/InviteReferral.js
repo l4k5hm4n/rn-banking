@@ -4,10 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import Colors from '../../constants/colors'
 
-// const RightArrow = import('../../assets/svg/right_arrow.js');
-
 const InviteReferral = props => {
-    console.warn(Platform.OS)
     return (
         <LinearGradient 
         colors={['white', '#E6EAFF']}

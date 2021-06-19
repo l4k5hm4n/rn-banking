@@ -4,7 +4,7 @@ import Colors from '../../constants/colors'
 import BillsList from '../BillsList'
 import EllipsesSvg from '../../assets/svg/Ellipses'
 
-const SendAgain = props => {
+const MyBills = props => {
 
     return (
         <View style={styles.container}>  
@@ -79,5 +79,5 @@ const styles = StyleSheet.create({
 
 })
 
-export default SendAgain;
+export default MyBills;
 

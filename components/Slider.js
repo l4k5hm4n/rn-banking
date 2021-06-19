@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import {Animated, View, Text, Image, StyleSheet, TouchableOpacity, FlatList, Dimensions} from 'react-native';
 
-const { width: windowWidth, height: windowHeight } = Dimensions.get("window");
+const { width: windowWidth } = Dimensions.get("window");
 
 let data = [
     {

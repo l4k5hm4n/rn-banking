@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-// import Colors from '../constants/colors'
-const ScannerSection = props => {
+import Header from './Header'
+
+const TopFold = ({navigation}) => {
     return (
         <LinearGradient  
             colors={['#C788FB', '#9269EB', '#435ECF']}
@@ -11,6 +12,8 @@ const ScannerSection = props => {
             end={{x: 0.5, y: 1}}
             style={styles.bgHeader}
         >
+
+        <Header navigation={navigation} activePage={"Home"}/>
         </LinearGradient>
     )
 }
@@ -22,4 +25,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ScannerSection;
+export default TopFold;

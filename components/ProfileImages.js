@@ -22,8 +22,8 @@ const SendAgain = props => {
                 data.map((item, index) => {   
                     return( 
                     <TouchableOpacity key={index} style={styles.ProfileContainer} activeOpacity={0.8} onPress={props.onPress}>
-                        <View key={index} style={styles.ProfileImage} >
-                                {(data[1].login.uuid == item.login.uuid) ? // test condition to rendering a view if profile picture isn't available
+                        <View style={styles.ProfileImage} >
+                                {(data[1].login.uuid == item.login.uuid) ? // test condition for rendering a view with alphabet if profile picture isn't available
                                 <View style={styles.FetchImage}><Text style={styles.FetchImageText}>{item.name.first[0]}</Text></View> 
                                  :       
                                  <Image style={styles.FetchImage} source={{uri: item.picture.large}} ></Image>

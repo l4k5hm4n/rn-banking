@@ -39,7 +39,7 @@ const SendAgain = props => {
                 <View style={styles.ProfileImage} >
                         <View style={styles.FetchImage}></View> 
                 </View>
-                <Text style={styles.Text}>test</Text>
+                <Text style={styles.Text}>loading..</Text>
             </TouchableOpacity>
         )}) 
         }

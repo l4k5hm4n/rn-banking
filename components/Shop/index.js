@@ -3,7 +3,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, View , ScrollView} from 'react-native';
 
 // Components
-import Header from '../Home/Header'
 import OffersSlider from './OffersSlider'
 import PopularOffers from './PopularOffers'
 import BottomFold from './BottomFold'
@@ -22,8 +21,8 @@ export default function Store({navigation}) {
             end={{x: 0, y: 1}}
             style={styles.MainContainer}
             >
-           <Header navigation={navigation} style={{marginTop: -36}} activePage={"Shop"}/>
-           <OffersSlider />
+           {/* <Header navigation={navigation} style={{marginTop: -36}} activePage={"Shop"}/> */}
+           <OffersSlider style={{paddingTop: 188}}/>
            <PopularOffers />
            </LinearGradient>
 
@@ -31,15 +30,14 @@ export default function Store({navigation}) {
 
     </ScrollView>
     </View>
-
   );
 }
 
 const styles = StyleSheet.create({
   MainContainer: {
-    paddingTop: 36,
+    marginTop: -90,
   },
   container: {
     backgroundColor: '#fff',
-  },
+  }
 });

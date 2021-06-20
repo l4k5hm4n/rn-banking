@@ -96,7 +96,7 @@ let offersData = [
 const Slider = props => {
 
     return (
-      <View>
+      <View style={{...props.style}}>
             <FlatList
                 data={offersData}
                 keyExtractor={item => item.id.toString()}

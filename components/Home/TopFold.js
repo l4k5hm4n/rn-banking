@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import Header from './Header'
 
-const TopFold = ({navigation}) => {
+const TopFold = () => {
     return (
         <LinearGradient  
             colors={['#C788FB', '#9269EB', '#435ECF']}
@@ -12,8 +11,6 @@ const TopFold = ({navigation}) => {
             end={{x: 0.5, y: 1}}
             style={styles.bgHeader}
         >
-
-        <Header navigation={navigation} activePage={"Home"}/>
         </LinearGradient>
     )
 }

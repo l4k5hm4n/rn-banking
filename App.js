@@ -1,8 +1,7 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, View, ScrollView} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
@@ -10,33 +9,48 @@ const Stack = createStackNavigator();
 // components
 import Home from './components/Home'
 import Shop from './components/Shop'
+import Header from './components/Header'
 
 export default function App() {
 
-  return (
-    <NavigationContainer>
-      <StatusBar style="auto" />
-      <Stack.Navigator 
-        screenOptions={{headerShown: false}}
-        initialRouteName="Home"
-      >
-        <Stack.Screen
-          name="Home"
-          component={Home}
-        />
-        <Stack.Screen name="Shop" component={Shop} />
-      </Stack.Navigator>
+  let [ activePage, setActivePage ] = useState('Home') 
 
-    </NavigationContainer>
+  let PayToggleHandler = () => {
+      setActivePage('Home')
+  }
+
+  let StoreToggleHandler = () => {
+     setActivePage('Shop')
+  }
+
+  // clear state on unmount
+  useEffect(() => {
+    return () => {
+      setActivePage(''); // This worked for me
+    };
+  }, []);
+
+  return (
+    <View style={styles.MainContainer}>
+    <ScrollView contentContainerStyle={styles.Container}>
+      <StatusBar style="auto" />
+        <Header 
+          activePage={activePage}
+          PayToggleHandler={PayToggleHandler}
+          StoreToggleHandler={StoreToggleHandler}
+        />
+        { activePage == 'Home' ? <Home /> : <Shop />}
+      </ScrollView>
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
   MainContainer: {
-    flex: 1,
+    backgroundColor: '#fff',
     marginTop: 36,
   },
-  container: {
+  Container: {
     flexGrow: 1,
     backgroundColor: '#fff',
   },

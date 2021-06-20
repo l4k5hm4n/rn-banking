@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View , ScrollView} from 'react-native';
+import { PanGestureHandler } from 'react-native-gesture-handler';
 
 // Components
 import TopFold from './TopFold'
@@ -17,7 +18,9 @@ const Home = ({navigation}) => {
 
   return (
     <View style={styles.MainContainer}>
-    <ScrollView contentContainerStyle={styles.container}
+
+    <ScrollView 
+    contentContainerStyle={styles.container}    
       // onScroll={(event) => {console.log(event.nativeEvent)}}
     >
       <TopFold navigation={navigation}/>
@@ -39,7 +42,7 @@ const Home = ({navigation}) => {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
-    marginTop: 36,
+    marginTop: -100,
   },
   container: {
     flexGrow: 1,

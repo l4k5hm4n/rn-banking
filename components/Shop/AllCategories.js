@@ -15,31 +15,31 @@ const AllCategories = props => {
 
     let billsData = [
         {
-            "name" : "Electricity",
+            "name" : "Food",
             "icon" : <FoodIcon />,
         },
         {
-            "name" : "Postpaid",
+            "name" : "Groceries",
             "icon" : <GroceriesIcon />,
         },
         {
-            "name" : "Prepaid",
+            "name" : "Health",
             "icon" : <HealthIcon />,
         },
         {
-            "name" : "House rent",
+            "name" : "Beverages",
             "icon" : <BeveragesIcon />,
         },
         {
-            "name" : "DTH",
+            "name" : "Retail",
             "icon" : <RetailIcon />,
         },
         {
-            "name" : "Piped gas",
+            "name" : "Shopping",
             "icon" : <ShoppingIcon />,
         },
         {
-            "name" : "FASTag",
+            "name" : "Travel",
             "icon" : <TravelIcon />,
         },
         {

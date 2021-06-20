@@ -117,12 +117,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 24,
     },
     SlideContainer: {
-        height:250,
+        height: 'auto',
         width: 165,
         marginRight: 16,
         borderRadius: 12,
         overflow: 'hidden',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
     },
     SlideImage: { 
         width: '100%',
@@ -130,7 +130,9 @@ const styles = StyleSheet.create({
     },
     SlideText: {
         fontSize: 14,
+        justifyContent: 'center',
         padding: 16,
+        alignItems: 'center'
     },
     SlideTextTitle: {
         color: 'white',
@@ -143,6 +145,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         flexDirection: 'row',
         justifyContent: 'center',
+        alignItems: 'center',
         width: '100%',
         marginTop: 10
     },

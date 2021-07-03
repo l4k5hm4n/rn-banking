@@ -1,6 +1,8 @@
+import { PanGestureHandler } from 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
+import Animated, { useSharedValue, useAnimatedGestureHandler } from 'react-native-reanimated'
 // import { createStackNavigator } from '@react-navigation/stack';
 
 // const Stack = createStackNavigator();
@@ -28,11 +30,46 @@ export default function App() {
       setActivePage('Home'); 
     };
   }, []);
+
+  let ref = React.createRef();
+
+  const startingPosition = 100;
+  const y = useSharedValue(startingPosition);
+
+  let _onScrollDown = useAnimatedGestureHandler({
+
+    onStart: (event, ctx) => {
+      
+    },
+    onActive: (event,ctx) => {
+      y.value = startingPosition + event.translationY
+    },
+    onEnd: (event, ctx) => {
+      y.value = startingPosition
+    },  
+
+  })
+
+  // let _onScrollDown = (event) => {
+
+  //   // console.log('down')
+  //   // const {translationY} = event.nativeEvent;
+  //   // // handle PanGesture event here
+  // };
+  
+
+  let scrollTest = () =>{
+    console.log('d')
+  }
+
   
 
   return (
     <View style={styles.MainContainer}>
-    <ScrollView contentContainerStyle={styles.Container}>
+    <ScrollView contentContainerStyle={styles.Container}
+            onscroll={scrollTest}
+            onScrollBeginDrag={console.log('t')}
+            >
         <View>
         <StatusBar style="auto" />
           <Header 

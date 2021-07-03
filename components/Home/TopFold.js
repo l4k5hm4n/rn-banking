@@ -18,7 +18,8 @@ const TopFold = () => {
 const styles = StyleSheet.create({
     bgHeader: {
         width: '100%',
-        height: 320
+        height: 320,
+        position: 'absolute',
     }
 })
 

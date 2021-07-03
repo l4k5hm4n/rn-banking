@@ -1,17 +1,21 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import Animated from 'react-native-reanimated'
+
 
 // import Colors from '../constants/colors'
-const MainContainer = props => {
+const MainContainer = (props) => {
+
+    let [propStyles, setStyles] = React.useState(props.style)
+
     return (
-        <View style={styles.container}>
+        <Animated.View style={[styles.container, propStyles]}>
             <View style={styles.DividerContainer}>
                 <View style={styles.Divider}>
-
                 </View>
             </View>
             {props.children}
-        </View>
+        </Animated.View>
     )
 }
 
@@ -30,8 +34,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderTopLeftRadius: 34,
         borderTopRightRadius: 34,
-        marginTop: -32,
+        marginTop: 240,
         overflow: 'hidden',
+        zIndex: 9999999999
     }
 })
 

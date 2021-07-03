@@ -1,9 +1,10 @@
 import React, { Suspense } from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Colors from '../../constants/colors'
+import LottieView from 'lottie-react-native';
 
 const SendMoney = React.lazy(() => import('../../assets/svg/send_money.js'));
-const PayBills = React.lazy(() => import('../../assets/svg/pay_bills.js'));
+// const PayBills = React.lazy(() => import('../../assets/svg/pay_bills.js'));
 const Wallet = React.lazy(() => import('../../assets/svg/wallet.js'));
 const Transactions = React.lazy(() => import('../../assets/svg/transactions.js'));
 
@@ -21,9 +22,15 @@ const MainPayments = props => {
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.IconContainer} activeOpacity={0.8} onPress={props.onPress}>
-                <View style={styles.Icon}>
+                <View style={styles.IconLottie}>
                     <Suspense fallback={<Text>...</Text>}>
-                        <PayBills style={styles.FetchImage} />    
+                    <LottieView
+                        style={styles.LottieView}
+                        source={require('../../assets/billers_lottie.json')}
+                        autoPlay
+                        speed={1.4}   
+                    />
+                        {/* <PayBills style={styles.FetchImage} />     */}
                     </Suspense>  
                 </View>
                 <Text style={styles.Text}>Pay Bills</Text>
@@ -64,12 +71,24 @@ const styles = StyleSheet.create({
     IconContainer: {
         marginRight: '6%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     Icon : {
         padding: 12,
         borderRadius: 40,
         backgroundColor: Colors.primary,
+    },
+    IconLottie: {
+        borderRadius: 40,
+        backgroundColor: Colors.primary,
+        maxWidth: 56,
+        maxHeight: 56, 
+    },
+    LottieView: {
+        width: 58,
+        height: 58, 
+        marginHorizontal: -7,
+        paddingLeft: 7
     },
     Text: {
         color: Colors.black_var1,

@@ -36,31 +36,38 @@ const Home = ({navigation}) => {
   let _onScrollDown = useAnimatedGestureHandler({
 
     onStart: (event, ctx) => {
-      ctx.startTop = top.value;
-      console.log(top.value, 'top')
+      ctx.startTop = Math.min(top.value, startingPosition);
+      // console.log(top.value, 'top')
     },
     
   onActive: (event, ctx) => {
       if(event.translationY >= 0) {
         top.value = withSpring(Math.min(ctx.startTop +event.translationY, startingPosition + 56), SPRING_CONFIG)
-        console.log(top.value, 1)
+        // console.log(top.value, 1)
       }
       else {
         top.value = withSpring(20, SPRING_CONFIG);
-        console.log(top.value, 2)
+        // console.log(top.value, 2)
       }
 
       // runOnJS(disableView)([])
       
     },
     onEnd: () => {
-      if(top.value > 0 && top.value > startingPosition - 20) {
-        top.value = withSpring(startingPosition, SPRING_CONFIG)
-        console.warn(1)
+      if(top.value > 36 && top.value < startingPosition - 160) {
+        top.value = 36
+        // console.warn(1)
       } 
-      else if(top.value < startingPosition - 160){
-        top.value = withSpring(36, SPRING_CONFIG)
-        console.warn(2)
+      // else if(top.value < startingPosition - 160 && top.value > 36){
+      //   top.value = 36
+      //   console.warn(2)
+      // }
+      // else if(top.value > startingPosition - 160 && top.value < startingPosition ) {
+      //   top.value = startingPosition
+      // }
+      else if(top.value > 36){ 
+        top.value = startingPosition
+        // console.warn(3)
       }
     }
 
@@ -68,7 +75,7 @@ const Home = ({navigation}) => {
 
   let panStyles = useAnimatedStyle(() => {
     return {
-      marginTop: withSpring(top.value,SPRING_CONFIG)
+      marginTop: withSpring(top.value, SPRING_CONFIG)
     };
   });
 

@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
         maxHeight: 56, 
     },
     LottieView: {
-        width: 58,
-        height: 58, 
+        width: 57,
+        height: 57, 
         marginHorizontal: -7,
         paddingLeft: 7
     },

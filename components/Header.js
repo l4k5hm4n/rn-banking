@@ -82,7 +82,6 @@ const Header = (props) => {
             </Suspense> 
         </TouchableOpacity>
     
-
         </View>
     )
 
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
         alignItems: 'center',
-        zIndex: 1,
+        zIndex: 1
     },
     IconContainer: {
         justifyContent: 'flex-start'
@@ -139,6 +138,7 @@ const styles = StyleSheet.create({
         width: 74, 
         maxWidth: 74,
         borderRadius: 20,
+        marginLeft: 2,
         justifyContent: 'center',
         alignItems: 'center',
         // backgroundColor: 'green'
